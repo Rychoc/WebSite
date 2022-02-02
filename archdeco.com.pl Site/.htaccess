@@ -1,0 +1,10 @@
+## EXPIRES CACHING ##
+RewriteEngine on
+RewriteCond %{HTTP_HOST} 89\.161\.238\.153
+RewriteRule (.*) http://www.archdeco.com.pl/$1 [R=301,L]
+
+ErrorDocument 404 https://www.archdeco.com.pl
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
